@@ -1,0 +1,64 @@
+# Bytecode e arquivos Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# Arquivos temporários
+*.log
+*.tmp
+*.swp
+*.bak
+*.DS_Store
+*.env
+.env
+.env.*
+
+# Dados de treino/modelo
+training/
+logs/
+*.csv
+
+# PyTorch
+*.pt
+*.pth
+
+# HuggingFace cache
+.cache/
+transformers_cache/
+datasets_cache/
+*.arrow
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Jupyter (caso use em testes)
+.ipynb_checkpoints/
+
+# Docker
+*.pid
+docker-compose.override.yml
+
+# Testes
+coverage/
+htmlcov/
+.tox/
+.pytest_cache/
+.noseids
+
+# IDEs
+.idea/
+*.iml
+
+# Arquivos de build
+dist/
+build/
+*.egg-info/
+
+# SQLite ou outros bancos temporários
+*.sqlite3
+*.db
