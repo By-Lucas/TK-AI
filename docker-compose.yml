@@ -45,7 +45,7 @@ services:
   celery_worker:
     build: .
     container_name: tk_celery_worker
-    command: celery -A tasks.celery_worker worker --loglevel=info --concurrency=2 --prefetch-multiplier=1 --max-tasks-per-child=100
+    command: celery -A app.tasks.celery_worker worker --loglevel=info --concurrency=2 --prefetch-multiplier=1 --max-tasks-per-child=100
     volumes:
       - .:/app
     env_file:
