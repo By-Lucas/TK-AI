@@ -16,7 +16,6 @@ __pycache__/
 .env.*
 
 # Dados de treino/modelo
-training/
 logs/
 *.csv
 

@@ -38,13 +38,14 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: ${RABBITMQ_USER}
       RABBITMQ_DEFAULT_PASS: ${RABBITMQ_PASSWORD}
+      RABBITMQ_VM_MEMORY_HIGH_WATERMARK: "0.5"  # Usa no máximo 50% da RAM
     volumes:
       - .:/app
   
   celery_worker:
     build: .
     container_name: tk_celery_worker
-    command: celery -A app.tasks.celery_worker worker --loglevel=info
+    command: celery -A app.tasks.celery_worker worker --loglevel=info --concurrency=2 --prefetch-multiplier=1 --max-tasks-per-child=100
     volumes:
       - .:/app
     env_file:
@@ -52,6 +53,7 @@ services:
     depends_on:
       - rabbitmq
       - tk-api
+    restart: always  # 🔁 Reinicia se travar
 
 
 volumes:
