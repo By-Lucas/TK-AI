@@ -61,3 +61,4 @@ build/
 # SQLite ou outros bancos temporários
 *.sqlite3
 *.db
+venv
